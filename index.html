@@ -28,6 +28,14 @@
         .gradient-hero {
             background: linear-gradient(135deg, #e8f4ff 0%, #ffffff 50%, #f0f9ff 100%);
         }
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .faq-content.open {
+            max-height: 500px;
+        }
     </style>
 </head>
 <body class="bg-white text-gray-900">
@@ -47,7 +55,7 @@
                     <!-- Desktop Menu -->
                     <div class="hidden md:flex items-center gap-8">
                         <button onclick="setView('home')" id="nav-home" class="text-gray-900 font-medium text-sm transition-colors">الرئيسية</button>
-                        <a href="#features" id="nav-features" class="text-gray-500 hover:text-woot transition-colors font-medium text-sm">التقنيات</a>
+                        <a href="#features-grid" id="nav-features" class="text-gray-500 hover:text-woot transition-colors font-medium text-sm">المميزات</a>
                         <a href="#services" id="nav-services" class="text-gray-500 hover:text-woot transition-colors font-medium text-sm">الخدمات</a>
                         <button onclick="setView('contact')" id="nav-contact" class="text-gray-500 hover:text-woot transition-colors font-medium text-sm">تواصل معنا</button>
 
@@ -73,7 +81,7 @@
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg px-4 py-6 space-y-4">
                 <button onclick="setView('home'); toggleMenu();" class="block text-gray-600 font-medium w-full text-right" id="m-nav-home">الرئيسية</button>
-                <a href="#features" class="block text-gray-600 font-medium" onclick="toggleMenu()" id="m-nav-features">التقنيات</a>
+                <a href="#features-grid" class="block text-gray-600 font-medium" onclick="toggleMenu()" id="m-nav-features">المميزات</a>
                 <a href="#services" class="block text-gray-600 font-medium" onclick="toggleMenu()" id="m-nav-services">الخدمات</a>
                 <button onclick="setView('contact'); toggleMenu();" class="block text-gray-600 font-medium w-full text-right" id="m-nav-contact">تواصل معنا</button>
             </div>
@@ -129,6 +137,132 @@
                     </div>
                 </section>
 
+                <!-- Features Grid Section -->
+                <section id="features-grid" class="py-24 bg-white border-t border-gray-100">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-16">
+                            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" id="feat-title">لماذا تختار Taleik AI؟</h2>
+                            <p class="text-gray-500 max-w-2xl mx-auto text-lg font-light" id="feat-subtitle">مميزات قوية تساعدك على أتمتة أعمالك وتحسين تجربة عملائك</p>
+                        </div>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <!-- Feature 1 -->
+                            <div class="p-8 rounded-3xl bg-gradient-to-br from-green-50 to-green-100/50 border border-green-100 hover:shadow-lg transition-all group">
+                                <div class="w-14 h-14 bg-green-500 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-3" id="feat-1-title">رد فوري 24/7</h3>
+                                <p class="text-gray-600 leading-relaxed" id="feat-1-desc">روبوتات ذكية ترد على عملائك في أي وقت، حتى أثناء نومك. لا تفوت أي فرصة بيع.</p>
+                            </div>
+                            <!-- Feature 2 -->
+                            <div class="p-8 rounded-3xl bg-gradient-to-br from-blue-50 to-blue-100/50 border border-blue-100 hover:shadow-lg transition-all group">
+                                <div class="w-14 h-14 bg-woot rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-3" id="feat-2-title">إدارة محادثات موحدة</h3>
+                                <p class="text-gray-600 leading-relaxed" id="feat-2-desc">اجمع كل محادثات WhatsApp وMessenger والموقع في مكان واحد. فريقك يعمل بكفاءة أعلى.</p>
+                            </div>
+                            <!-- Feature 3 -->
+                            <div class="p-8 rounded-3xl bg-gradient-to-br from-purple-50 to-purple-100/50 border border-purple-100 hover:shadow-lg transition-all group">
+                                <div class="w-14 h-14 bg-purple-500 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-3" id="feat-3-title">أتمتة سير العمل</h3>
+                                <p class="text-gray-600 leading-relaxed" id="feat-3-desc">اربط أنظمتك مع n8n لأتمتة المهام المتكررة. من استلام الطلب إلى إرسال الفاتورة تلقائياً.</p>
+                            </div>
+                            <!-- Feature 4 -->
+                            <div class="p-8 rounded-3xl bg-gradient-to-br from-orange-50 to-orange-100/50 border border-orange-100 hover:shadow-lg transition-all group">
+                                <div class="w-14 h-14 bg-orange-500 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-3" id="feat-4-title">أمان وخصوصية</h3>
+                                <p class="text-gray-600 leading-relaxed" id="feat-4-desc">بياناتك ملكك. استضافة آمنة مع تشفير كامل ونسخ احتياطي يومي. متوافق مع GDPR.</p>
+                            </div>
+                            <!-- Feature 5 -->
+                            <div class="p-8 rounded-3xl bg-gradient-to-br from-pink-50 to-pink-100/50 border border-pink-100 hover:shadow-lg transition-all group">
+                                <div class="w-14 h-14 bg-pink-500 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-3" id="feat-5-title">تخصيص كامل</h3>
+                                <p class="text-gray-600 leading-relaxed" id="feat-5-desc">صمم روبوتات محادثة تتناسب مع هوية علامتك التجارية. بدون أي خبرة برمجية مطلوبة.</p>
+                            </div>
+                            <!-- Feature 6 -->
+                            <div class="p-8 rounded-3xl bg-gradient-to-br from-teal-50 to-teal-100/50 border border-teal-100 hover:shadow-lg transition-all group">
+                                <div class="w-14 h-14 bg-teal-500 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-3" id="feat-6-title">تقارير وتحليلات</h3>
+                                <p class="text-gray-600 leading-relaxed" id="feat-6-desc">تابع أداء فريقك ورضا العملاء بتقارير مفصلة. اتخذ قرارات مبنية على البيانات.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Testimonials Section -->
+                <section id="testimonials" class="py-24 bg-gray-900 text-white">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-16">
+                            <h2 class="text-3xl md:text-4xl font-bold mb-4" id="test-title">ماذا يقول عملاؤنا</h2>
+                            <p class="text-gray-400 max-w-2xl mx-auto text-lg font-light" id="test-subtitle">شركات ناجحة تثق في Taleik AI لأتمتة أعمالها</p>
+                        </div>
+                        <div class="grid md:grid-cols-3 gap-8">
+                            <!-- Testimonial 1 -->
+                            <div class="bg-gray-800/50 backdrop-blur rounded-3xl p-8 border border-gray-700 hover:border-woot/50 transition-all">
+                                <div class="flex items-center gap-1 mb-6">
+                                    <svg class="text-yellow-400" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="text-yellow-400" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="text-yellow-400" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="text-yellow-400" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="text-yellow-400" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                </div>
+                                <p class="text-gray-300 mb-6 leading-relaxed" id="test-1-text">"وفرنا أكثر من 40 ساعة أسبوعياً بعد استخدام Taleik AI. الروبوت يرد على 80% من الاستفسارات تلقائياً!"</p>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-woot rounded-full flex items-center justify-center text-white font-bold">أ</div>
+                                    <div>
+                                        <p class="font-bold" id="test-1-name">أحمد المنصوري</p>
+                                        <p class="text-gray-400 text-sm" id="test-1-role">مدير التسويق، متجر إلكتروني</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Testimonial 2 -->
+                            <div class="bg-gray-800/50 backdrop-blur rounded-3xl p-8 border border-gray-700 hover:border-woot/50 transition-all">
+                                <div class="flex items-center gap-1 mb-6">
+                                    <svg class="text-yellow-400" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="text-yellow-400" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="text-yellow-400" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="text-yellow-400" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="text-yellow-400" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                </div>
+                                <p class="text-gray-300 mb-6 leading-relaxed" id="test-2-text">"الدعم الفني ممتاز والنظام سهل الاستخدام. ارتفعت مبيعاتنا بنسبة 35% خلال 3 أشهر فقط."</p>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold">س</div>
+                                    <div>
+                                        <p class="font-bold" id="test-2-name">سارة الحربي</p>
+                                        <p class="text-gray-400 text-sm" id="test-2-role">مالكة، وكالة عقارية</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Testimonial 3 -->
+                            <div class="bg-gray-800/50 backdrop-blur rounded-3xl p-8 border border-gray-700 hover:border-woot/50 transition-all">
+                                <div class="flex items-center gap-1 mb-6">
+                                    <svg class="text-yellow-400" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="text-yellow-400" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="text-yellow-400" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="text-yellow-400" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="text-yellow-400" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                </div>
+                                <p class="text-gray-300 mb-6 leading-relaxed" id="test-3-text">"أخيراً حل يفهم احتياجات السوق العربي. التكامل مع واتساب غير قواعد اللعبة لدينا تماماً."</p>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">م</div>
+                                    <div>
+                                        <p class="font-bold" id="test-3-name">محمد العتيبي</p>
+                                        <p class="text-gray-400 text-sm" id="test-3-role">CEO، شركة تقنية</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- Services Section -->
                 <section id="services" class="py-24 bg-gray-50/80 border-t border-gray-100">
                     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -139,7 +273,7 @@
                         <div class="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
                             <!-- Managed - Featured -->
                             <div class="bg-white rounded-3xl p-8 border-2 border-woot shadow-xl shadow-woot/10 relative overflow-hidden">
-                                <div class="absolute top-0 right-0 bg-woot text-white text-xs font-bold px-4 py-1 rounded-bl-xl">الأكثر شيوعاً</div>
+                                <div class="absolute top-0 right-0 bg-woot text-white text-xs font-bold px-4 py-1 rounded-bl-xl" id="serv-popular">الأكثر شيوعاً</div>
                                 <div class="w-12 h-12 bg-woot-light rounded-xl flex items-center justify-center text-woot mb-6">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                                 </div>
@@ -168,6 +302,80 @@
                                 </ul>
                                 <button class="w-full py-4 bg-white border-2 border-gray-200 text-gray-700 rounded-xl font-bold hover:border-woot hover:text-woot transition-all" id="serv-s-cta">احجز خدمة النشر</button>
                             </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQ Section -->
+                <section id="faq" class="py-24 bg-white border-t border-gray-100">
+                    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-16">
+                            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" id="faq-title">الأسئلة الشائعة</h2>
+                            <p class="text-gray-500 text-lg font-light" id="faq-subtitle">إجابات على أكثر الأسئلة شيوعاً حول خدماتنا</p>
+                        </div>
+                        <div class="space-y-4">
+                            <!-- FAQ 1 -->
+                            <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                                <button onclick="toggleFaq(1)" class="w-full px-6 py-5 text-right flex items-center justify-between bg-white hover:bg-gray-50 transition-colors">
+                                    <span class="font-semibold text-gray-900" id="faq-1-q">ما هي المنصات المدعومة للتكامل؟</span>
+                                    <svg id="faq-icon-1" class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                </button>
+                                <div id="faq-content-1" class="faq-content">
+                                    <p class="px-6 pb-5 text-gray-600" id="faq-1-a">ندعم WhatsApp Business API، Facebook Messenger، Instagram، Telegram، والمزيد. كما نوفر تكامل مع أنظمة CRM الشهيرة وأدوات التسويق عبر البريد الإلكتروني.</p>
+                                </div>
+                            </div>
+                            <!-- FAQ 2 -->
+                            <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                                <button onclick="toggleFaq(2)" class="w-full px-6 py-5 text-right flex items-center justify-between bg-white hover:bg-gray-50 transition-colors">
+                                    <span class="font-semibold text-gray-900" id="faq-2-q">هل أحتاج خبرة تقنية لاستخدام النظام؟</span>
+                                    <svg id="faq-icon-2" class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                </button>
+                                <div id="faq-content-2" class="faq-content">
+                                    <p class="px-6 pb-5 text-gray-600" id="faq-2-a">لا، النظام مصمم ليكون سهل الاستخدام. واجهة Typebot تتيح لك بناء روبوتات محادثة بالسحب والإفلات بدون أي كود. كما نوفر تدريباً مجانياً عند الاشتراك.</p>
+                                </div>
+                            </div>
+                            <!-- FAQ 3 -->
+                            <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                                <button onclick="toggleFaq(3)" class="w-full px-6 py-5 text-right flex items-center justify-between bg-white hover:bg-gray-50 transition-colors">
+                                    <span class="font-semibold text-gray-900" id="faq-3-q">كيف يتم تأمين بيانات العملاء؟</span>
+                                    <svg id="faq-icon-3" class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                </button>
+                                <div id="faq-content-3" class="faq-content">
+                                    <p class="px-6 pb-5 text-gray-600" id="faq-3-a">نستخدم تشفير SSL/TLS لجميع الاتصالات، مع نسخ احتياطي يومي مشفر. خوادمنا موجودة في مراكز بيانات معتمدة وتتوافق مع معايير GDPR وSOC 2.</p>
+                                </div>
+                            </div>
+                            <!-- FAQ 4 -->
+                            <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                                <button onclick="toggleFaq(4)" class="w-full px-6 py-5 text-right flex items-center justify-between bg-white hover:bg-gray-50 transition-colors">
+                                    <span class="font-semibold text-gray-900" id="faq-4-q">ما الفرق بين الخدمة المُدارة والاستضافة الذاتية؟</span>
+                                    <svg id="faq-icon-4" class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                </button>
+                                <div id="faq-content-4" class="faq-content">
+                                    <p class="px-6 pb-5 text-gray-600" id="faq-4-a">الخدمة المُدارة تعني أننا نتولى كل شيء: الاستضافة، التحديثات، الصيانة، والدعم. أما الاستضافة الذاتية فنقوم بتثبيت النظام على خادمك الخاص وتتولى أنت إدارته مع دعم فني لمدة 30 يوماً.</p>
+                                </div>
+                            </div>
+                            <!-- FAQ 5 -->
+                            <div class="border border-gray-200 rounded-2xl overflow-hidden">
+                                <button onclick="toggleFaq(5)" class="w-full px-6 py-5 text-right flex items-center justify-between bg-white hover:bg-gray-50 transition-colors">
+                                    <span class="font-semibold text-gray-900" id="faq-5-q">هل يمكنني تجربة النظام قبل الاشتراك؟</span>
+                                    <svg id="faq-icon-5" class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                </button>
+                                <div id="faq-content-5" class="faq-content">
+                                    <p class="px-6 pb-5 text-gray-600" id="faq-5-a">نعم! نوفر عرضاً تجريبياً مجانياً يمكنك من خلاله استكشاف جميع المميزات. تواصل معنا لحجز موعد العرض التجريبي.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA Section -->
+                <section class="py-20 bg-woot">
+                    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6" id="cta-title">جاهز لتحويل طريقة تواصلك مع العملاء؟</h2>
+                        <p class="text-blue-100 text-lg mb-8 max-w-2xl mx-auto" id="cta-subtitle">انضم إلى مئات الشركات التي تستخدم Taleik AI لأتمتة أعمالها وزيادة مبيعاتها.</p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <button onclick="setView('contact')" class="w-full sm:w-auto px-8 py-4 bg-white text-woot rounded-full font-bold hover:bg-gray-100 transition-all shadow-lg" id="cta-btn-primary">ابدأ مجاناً</button>
+                            <button onclick="setView('contact')" class="w-full sm:w-auto px-8 py-4 bg-transparent text-white border-2 border-white/30 rounded-full font-medium hover:bg-white/10 transition-all" id="cta-btn-secondary">تواصل معنا</button>
                         </div>
                     </div>
                 </section>
@@ -255,17 +463,59 @@
         const content = {
             en: {
                 dir: 'ltr',
-                nav: { home: "Home", features: "Technology", pricing: "Services", contact: "Contact", cta: "Get Started" },
+                nav: { home: "Home", features: "Features", pricing: "Services", contact: "Contact", cta: "Get Started" },
                 hero: { badge: "WhatsApp AI Automation", title: "Next-Gen AI CRM & Automation", subtitle: "Deploy a fully integrated ecosystem with Chatwoot, n8n, Typebot, and WhatsApp. Own your data and automate your conversations.", cta1: "View Plans", cta2: "Learn More" },
-                serv: { title: "Choose Your Model", sub: "Whether you want hands-off management or total control, we have the solution.", mt: "Managed Service", mp: "Monthly Subscription", md: "We host, maintain, and update everything. You focus on your business.", ml: ["High-performance cloud hosting", "Daily Backups", "Automatic Updates"], mc: "Subscribe Now", st: "Self-Hosted", sp: "One-Time Fee", sd: "We deploy on your own servers (VPS). You own the infrastructure.", sl: ["Installation on your VPS", "Full Root Access", "30 Days Support"], sc: "Book Deployment" },
+                feat: { title: "Why Choose Taleik AI?", sub: "Powerful features to help automate your business and improve customer experience",
+                    f1t: "24/7 Instant Response", f1d: "Smart bots respond to your customers anytime, even while you sleep. Never miss a sales opportunity.",
+                    f2t: "Unified Inbox", f2d: "Combine all WhatsApp, Messenger, and website chats in one place. Your team works more efficiently.",
+                    f3t: "Workflow Automation", f3d: "Connect your systems with n8n to automate repetitive tasks. From order receipt to invoice sending automatically.",
+                    f4t: "Security & Privacy", f4d: "Your data is yours. Secure hosting with full encryption and daily backups. GDPR compliant.",
+                    f5t: "Full Customization", f5d: "Design chatbots that match your brand identity. No coding experience required.",
+                    f6t: "Reports & Analytics", f6d: "Track your team's performance and customer satisfaction with detailed reports. Make data-driven decisions."
+                },
+                test: { title: "What Our Customers Say", sub: "Successful companies trust Taleik AI to automate their business",
+                    t1t: "\"We saved over 40 hours weekly after using Taleik AI. The bot responds to 80% of inquiries automatically!\"", t1n: "Ahmed Al-Mansouri", t1r: "Marketing Manager, E-commerce Store",
+                    t2t: "\"Excellent support and easy-to-use system. Our sales increased by 35% in just 3 months.\"", t2n: "Sara Al-Harbi", t2r: "Owner, Real Estate Agency",
+                    t3t: "\"Finally a solution that understands the Arab market needs. WhatsApp integration completely changed the game for us.\"", t3n: "Mohammed Al-Otaibi", t3r: "CEO, Tech Company"
+                },
+                serv: { title: "Choose Your Model", sub: "Whether you want hands-off management or total control, we have the solution.", popular: "Most Popular", mt: "Managed Service", mp: "Monthly Subscription", md: "We host, maintain, and update everything. You focus on your business.", ml: ["High-performance cloud hosting", "Daily Backups", "Automatic Updates"], mc: "Subscribe Now", st: "Self-Hosted", sp: "One-Time Fee", sd: "We deploy on your own servers (VPS). You own the infrastructure.", sl: ["Installation on your VPS", "Full Root Access", "30 Days Support"], sc: "Book Deployment" },
+                faq: { title: "Frequently Asked Questions", sub: "Answers to the most common questions about our services",
+                    q1: "What platforms are supported for integration?", a1: "We support WhatsApp Business API, Facebook Messenger, Instagram, Telegram, and more. We also provide integration with popular CRM systems and email marketing tools.",
+                    q2: "Do I need technical experience to use the system?", a2: "No, the system is designed to be user-friendly. Typebot interface allows you to build chatbots with drag and drop without any code. We also provide free training upon subscription.",
+                    q3: "How is customer data secured?", a3: "We use SSL/TLS encryption for all communications, with encrypted daily backups. Our servers are in certified data centers and comply with GDPR and SOC 2 standards.",
+                    q4: "What's the difference between managed service and self-hosting?", a4: "Managed service means we handle everything: hosting, updates, maintenance, and support. Self-hosting means we install the system on your server and you manage it with 30 days technical support.",
+                    q5: "Can I try the system before subscribing?", a5: "Yes! We offer a free demo where you can explore all features. Contact us to schedule your demo."
+                },
+                cta: { title: "Ready to Transform How You Communicate with Customers?", sub: "Join hundreds of companies using Taleik AI to automate their business and increase sales.", btn1: "Start Free", btn2: "Contact Us" },
                 con: { title: "Get in Touch", sub: "Questions about our deployment services? We're here to help.", n: "Name", e: "Email", m: "Message", s: "Send Message", ok: "Thank you! We'll reply as soon as possible." },
                 foot: { desc: "Empowering businesses with open-source automation.", r: "© 2026 Taleik AI. All rights reserved.", t: "WhatsApp Automation & AI Chatbots" }
             },
             ar: {
                 dir: 'rtl',
-                nav: { home: "الرئيسية", features: "التقنيات", pricing: "الخدمات", contact: "تواصل معنا", cta: "ابدأ الآن" },
+                nav: { home: "الرئيسية", features: "المميزات", pricing: "الخدمات", contact: "تواصل معنا", cta: "ابدأ الآن" },
                 hero: { badge: "أتمتة واتساب بالذكاء الاصطناعي", title: "الجيل القادم من أنظمة إدارة العملاء والأتمتة", subtitle: "نظام بيئي متكامل يجمع بين Chatwoot و n8n و Typebot و واتساب. امتلك بياناتك وأتمت محادثاتك.", cta1: "عرض الخطط", cta2: "المزيد من المعلومات" },
-                serv: { title: "اختر نموذج النشر المناسب", sub: "سواء كنت تريد إدارة كاملة منا أو تحكماً كاملاً لك، لدينا الحل.", mt: "الخدمة المُدارة", mp: "اشتراك شهري", md: "نحن نستضيف ونحدث ونحمي النظام. أنت تركز فقط على عملك.", ml: ["استضافة سحابية عالية الأداء", "نسخ احتياطي يومي", "تحديثات تلقائية"], mc: "اشترك الآن", st: "نشر على خادمك الخاص", sp: "دفعة لمرة واحدة", sd: "نقوم بتثبيت النظام بالكامل على خادمك الخاص (VPS). أنت تمتلك البنية التحتية.", sl: ["التثبيت على خادمك الخاص", "صلاحيات وصول كاملة (Root)", "دعم فني لمدة 30 يوماً"], sc: "احجز خدمة النشر" },
+                feat: { title: "لماذا تختار Taleik AI؟", sub: "مميزات قوية تساعدك على أتمتة أعمالك وتحسين تجربة عملائك",
+                    f1t: "رد فوري 24/7", f1d: "روبوتات ذكية ترد على عملائك في أي وقت، حتى أثناء نومك. لا تفوت أي فرصة بيع.",
+                    f2t: "إدارة محادثات موحدة", f2d: "اجمع كل محادثات WhatsApp وMessenger والموقع في مكان واحد. فريقك يعمل بكفاءة أعلى.",
+                    f3t: "أتمتة سير العمل", f3d: "اربط أنظمتك مع n8n لأتمتة المهام المتكررة. من استلام الطلب إلى إرسال الفاتورة تلقائياً.",
+                    f4t: "أمان وخصوصية", f4d: "بياناتك ملكك. استضافة آمنة مع تشفير كامل ونسخ احتياطي يومي. متوافق مع GDPR.",
+                    f5t: "تخصيص كامل", f5d: "صمم روبوتات محادثة تتناسب مع هوية علامتك التجارية. بدون أي خبرة برمجية مطلوبة.",
+                    f6t: "تقارير وتحليلات", f6d: "تابع أداء فريقك ورضا العملاء بتقارير مفصلة. اتخذ قرارات مبنية على البيانات."
+                },
+                test: { title: "ماذا يقول عملاؤنا", sub: "شركات ناجحة تثق في Taleik AI لأتمتة أعمالها",
+                    t1t: "\"وفرنا أكثر من 40 ساعة أسبوعياً بعد استخدام Taleik AI. الروبوت يرد على 80% من الاستفسارات تلقائياً!\"", t1n: "أحمد المنصوري", t1r: "مدير التسويق، متجر إلكتروني",
+                    t2t: "\"الدعم الفني ممتاز والنظام سهل الاستخدام. ارتفعت مبيعاتنا بنسبة 35% خلال 3 أشهر فقط.\"", t2n: "سارة الحربي", t2r: "مالكة، وكالة عقارية",
+                    t3t: "\"أخيراً حل يفهم احتياجات السوق العربي. التكامل مع واتساب غير قواعد اللعبة لدينا تماماً.\"", t3n: "محمد العتيبي", t3r: "CEO، شركة تقنية"
+                },
+                serv: { title: "اختر نموذج النشر المناسب", sub: "سواء كنت تريد إدارة كاملة منا أو تحكماً كاملاً لك، لدينا الحل.", popular: "الأكثر شيوعاً", mt: "الخدمة المُدارة", mp: "اشتراك شهري", md: "نحن نستضيف ونحدث ونحمي النظام. أنت تركز فقط على عملك.", ml: ["استضافة سحابية عالية الأداء", "نسخ احتياطي يومي", "تحديثات تلقائية"], mc: "اشترك الآن", st: "نشر على خادمك الخاص", sp: "دفعة لمرة واحدة", sd: "نقوم بتثبيت النظام بالكامل على خادمك الخاص (VPS). أنت تمتلك البنية التحتية.", sl: ["التثبيت على خادمك الخاص", "صلاحيات وصول كاملة (Root)", "دعم فني لمدة 30 يوماً"], sc: "احجز خدمة النشر" },
+                faq: { title: "الأسئلة الشائعة", sub: "إجابات على أكثر الأسئلة شيوعاً حول خدماتنا",
+                    q1: "ما هي المنصات المدعومة للتكامل؟", a1: "ندعم WhatsApp Business API، Facebook Messenger، Instagram، Telegram، والمزيد. كما نوفر تكامل مع أنظمة CRM الشهيرة وأدوات التسويق عبر البريد الإلكتروني.",
+                    q2: "هل أحتاج خبرة تقنية لاستخدام النظام؟", a2: "لا، النظام مصمم ليكون سهل الاستخدام. واجهة Typebot تتيح لك بناء روبوتات محادثة بالسحب والإفلات بدون أي كود. كما نوفر تدريباً مجانياً عند الاشتراك.",
+                    q3: "كيف يتم تأمين بيانات العملاء؟", a3: "نستخدم تشفير SSL/TLS لجميع الاتصالات، مع نسخ احتياطي يومي مشفر. خوادمنا موجودة في مراكز بيانات معتمدة وتتوافق مع معايير GDPR وSOC 2.",
+                    q4: "ما الفرق بين الخدمة المُدارة والاستضافة الذاتية؟", a4: "الخدمة المُدارة تعني أننا نتولى كل شيء: الاستضافة، التحديثات، الصيانة، والدعم. أما الاستضافة الذاتية فنقوم بتثبيت النظام على خادمك الخاص وتتولى أنت إدارته مع دعم فني لمدة 30 يوماً.",
+                    q5: "هل يمكنني تجربة النظام قبل الاشتراك؟", a5: "نعم! نوفر عرضاً تجريبياً مجانياً يمكنك من خلاله استكشاف جميع المميزات. تواصل معنا لحجز موعد العرض التجريبي."
+                },
+                cta: { title: "جاهز لتحويل طريقة تواصلك مع العملاء؟", sub: "انضم إلى مئات الشركات التي تستخدم Taleik AI لأتمتة أعمالها وزيادة مبيعاتها.", btn1: "ابدأ مجاناً", btn2: "تواصل معنا" },
                 con: { title: "تواصل معنا", sub: "هل لديك أسئلة حول خدمات النشر لدينا؟ نحن هنا للمساعدة.", n: "الاسم", e: "البريد الإلكتروني", m: "الرسالة", s: "إرسال الرسالة", ok: "شكراً لك! سنرد عليك في أقرب وقت ممكن." },
                 foot: { desc: "تمكين الشركات من خلال أتمتة المصادر المفتوحة.", r: "© 2026 Taleik AI. جميع الحقوق محفوظة.", t: "أتمتة واتساب وروبوتات المحادثة الذكية" }
             }
@@ -295,9 +545,39 @@
             document.getElementById('hero-cta-primary').innerText = t.hero.cta1;
             document.getElementById('hero-cta-secondary').innerText = t.hero.cta2;
 
+            // Features
+            document.getElementById('feat-title').innerText = t.feat.title;
+            document.getElementById('feat-subtitle').innerText = t.feat.sub;
+            document.getElementById('feat-1-title').innerText = t.feat.f1t;
+            document.getElementById('feat-1-desc').innerText = t.feat.f1d;
+            document.getElementById('feat-2-title').innerText = t.feat.f2t;
+            document.getElementById('feat-2-desc').innerText = t.feat.f2d;
+            document.getElementById('feat-3-title').innerText = t.feat.f3t;
+            document.getElementById('feat-3-desc').innerText = t.feat.f3d;
+            document.getElementById('feat-4-title').innerText = t.feat.f4t;
+            document.getElementById('feat-4-desc').innerText = t.feat.f4d;
+            document.getElementById('feat-5-title').innerText = t.feat.f5t;
+            document.getElementById('feat-5-desc').innerText = t.feat.f5d;
+            document.getElementById('feat-6-title').innerText = t.feat.f6t;
+            document.getElementById('feat-6-desc').innerText = t.feat.f6d;
+
+            // Testimonials
+            document.getElementById('test-title').innerText = t.test.title;
+            document.getElementById('test-subtitle').innerText = t.test.sub;
+            document.getElementById('test-1-text').innerText = t.test.t1t;
+            document.getElementById('test-1-name').innerText = t.test.t1n;
+            document.getElementById('test-1-role').innerText = t.test.t1r;
+            document.getElementById('test-2-text').innerText = t.test.t2t;
+            document.getElementById('test-2-name').innerText = t.test.t2n;
+            document.getElementById('test-2-role').innerText = t.test.t2r;
+            document.getElementById('test-3-text').innerText = t.test.t3t;
+            document.getElementById('test-3-name').innerText = t.test.t3n;
+            document.getElementById('test-3-role').innerText = t.test.t3r;
+
             // Services
             document.getElementById('serv-title').innerText = t.serv.title;
             document.getElementById('serv-subtitle').innerText = t.serv.sub;
+            document.getElementById('serv-popular').innerText = t.serv.popular;
             document.getElementById('serv-m-title').innerText = t.serv.mt;
             document.getElementById('serv-m-price').innerText = t.serv.mp;
             document.getElementById('serv-m-desc').innerText = t.serv.md;
@@ -306,6 +586,26 @@
             document.getElementById('serv-s-price').innerText = t.serv.sp;
             document.getElementById('serv-s-desc').innerText = t.serv.sd;
             document.getElementById('serv-s-cta').innerText = t.serv.sc;
+
+            // FAQ
+            document.getElementById('faq-title').innerText = t.faq.title;
+            document.getElementById('faq-subtitle').innerText = t.faq.sub;
+            document.getElementById('faq-1-q').innerText = t.faq.q1;
+            document.getElementById('faq-1-a').innerText = t.faq.a1;
+            document.getElementById('faq-2-q').innerText = t.faq.q2;
+            document.getElementById('faq-2-a').innerText = t.faq.a2;
+            document.getElementById('faq-3-q').innerText = t.faq.q3;
+            document.getElementById('faq-3-a').innerText = t.faq.a3;
+            document.getElementById('faq-4-q').innerText = t.faq.q4;
+            document.getElementById('faq-4-a').innerText = t.faq.a4;
+            document.getElementById('faq-5-q').innerText = t.faq.q5;
+            document.getElementById('faq-5-a').innerText = t.faq.a5;
+
+            // CTA
+            document.getElementById('cta-title').innerText = t.cta.title;
+            document.getElementById('cta-subtitle').innerText = t.cta.sub;
+            document.getElementById('cta-btn-primary').innerText = t.cta.btn1;
+            document.getElementById('cta-btn-secondary').innerText = t.cta.btn2;
 
             // Contact
             document.getElementById('con-title').innerText = t.con.title;
@@ -342,6 +642,13 @@
 
         function toggleMenu() {
             document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        function toggleFaq(id) {
+            const content = document.getElementById(`faq-content-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            content.classList.toggle('open');
+            icon.style.transform = content.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0)';
         }
 
         function handleContact(e) {
